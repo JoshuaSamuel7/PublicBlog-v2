@@ -1,0 +1,146 @@
+/* General Styles */
+.header {
+  background-image: linear-gradient(0deg, #001b32, #193d47, #204b63, #193d47, #001b32); 
+  color: #ffffff; 
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-width: 99%;
+}
+
+.header-title {
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  animation: slide-in-left 0.5s ease;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  margin-right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  animation: slide-in-right 0.5s ease;
+}
+
+.header-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  color: #ffffff; 
+  background-color: transparent;
+  border: 2px solid transparent; 
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.header-button:hover {
+  color: #3498db;
+  border-color: #3498db;
+  transform: translateY(-3px);
+}
+
+.header-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.header-button:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.logoutbtn {
+  margin: 0 15px;
+}
+
+.imgph {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.acc-name {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #001b32;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+
+  .header-button {
+    margin: 10px 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+  .acc-name{
+    visibility: hidden;
+  }
+  .imgph{
+    visibility: hidden;
+  }
+}

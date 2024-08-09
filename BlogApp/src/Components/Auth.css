@@ -1,0 +1,116 @@
+/* Dark Theme with Blue and White Combination and Matching Background */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(0deg ,#001b32 , #185f72 , #206c92 , #185f72 ,#001b32);/* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  color: #ecf0f1; /* Light text color */
+}
+
+.auth-container-l{
+  border-radius: 8px;
+  background-image: linear-gradient(0deg ,#001b32 , #185f72 , #206c92 , #185f72 ,#001b32);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  padding: 80px;
+  width: 100%;
+  max-width: 400px;
+  height: 40vh;
+  text-align: center; /* Align content to the center */
+  animation: slide-up 0.5s ease, fadeIn 0.5s ease;
+  margin-top: 40px;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.auth-container-l h2 {
+  margin-bottom: 2px;
+  color: #ffffff; /* White heading color */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.auth-container-l form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container-l label {
+  margin-bottom: 10px;
+  text-align: left;
+  color: #ffffff; /* White label color */
+  font-size: 14px;
+}
+
+.auth-container-l input {
+  width: 92%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #ffffff; /* White input background */
+  color: #333; /* Dark text color */
+  border: 1px solid #3498db; /* Blue border color */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-container-l input:focus {
+  outline: none;
+  border-color: #2980b9; /* Darker blue highlight color on focus */
+}
+
+.auth-container-l button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2980b9; /* Darker blue button background */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.auth-container-l button:hover {
+  background-color: #3498db; /* Lighter blue shade on hover */
+}
+
+.auth-container-l p {
+  margin-top: 20px;
+  color: #bdc3c7; /* Light paragraph text color */
+}
+
+.auth-container-l p a {
+  color: #3498db; /* Blue link color */
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.auth-container-l p a:hover {
+  text-decoration: underline;
+}
