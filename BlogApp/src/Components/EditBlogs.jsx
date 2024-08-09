@@ -78,7 +78,7 @@ const EditBlogs = ({ user }) => {
     return (
         <div>
             <div className='scroll-container'>
-                <h1>Edit Your Blog Posts</h1>
+                <h1 align='center'>Edit Your Blog Posts</h1>
                 <div className='blog-entries-edit'>
                     {posts.map(post => (
                         <div key={post._id} className="blog-entry-edit">

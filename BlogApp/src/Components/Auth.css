@@ -95,7 +95,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.auth-container-l button:hover {
+.auth-container-l button:hover {  
   background-color: #3498db; /* Lighter blue shade on hover */
 }
 
@@ -113,4 +113,28 @@ body {
 
 .auth-container-l p a:hover {
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+
+  .auth-container-l {
+    padding: 30px;
+    width: 80%;
+    margin: auto;
+    height: 40vh;
+  }
+
+  .auth-container-l h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .auth-container-l input, 
+  .auth-container-l button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .auth-container-l p {
+    font-size: 14px;
+  }
 }

@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
-import './Header.css';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Buffer } from 'buffer';
 import axios from 'axios';
+import './Header.css';
 
 const Header = ({ user, setUser }) => {
   const navigate = useNavigate();
@@ -30,7 +29,15 @@ const Header = ({ user, setUser }) => {
     } else {
       navigate('/'); // Navigate to the home page
     }
+    setIsNavOpen(false); // Close the navbar after clicking
   };
+
+  // Close navbar when route changes
+  useEffect(() => {
+    if (isNavOpen) {
+      setIsNavOpen(false);
+    }
+  }, [location]);
 
   return (
     <header className="header">
@@ -40,12 +47,12 @@ const Header = ({ user, setUser }) => {
       </button>
       <nav className={`header-nav ${isNavOpen ? 'open' : ''}`}>
         <button onClick={handleHomeClick} className="header-button">Home</button>
-        <Link to="/add-blogs" className="header-button">Add Blogs</Link>
-        <Link to="/edit-blogs" className="header-button">Manage Blogs</Link>
-        <Link to="/about" className="header-button">About Us / Contact Us</Link>
+        <Link to="/add-blogs" className="header-button" onClick={() => setIsNavOpen(false)}>Add Blogs</Link>
+        <Link to="/edit-blogs" className="header-button" onClick={() => setIsNavOpen(false)}>Manage Blogs</Link>
+        <Link to="/about" className="header-button" onClick={() => setIsNavOpen(false)}>About Us / Contact Us</Link>
         {user ? (
           <>
-            <Link to="/profile" className="header-button">Profile</Link>
+            <Link to="/profile" className="header-button" onClick={() => setIsNavOpen(false)}>Profile</Link>
             <div className='acc-name'>
               {user.profilePicture && user.profilePicture.data && (
                 <img
@@ -59,8 +66,8 @@ const Header = ({ user, setUser }) => {
           </>
         ) : (
           <>
-            <Link to="/login" className="header-button">Login</Link>
-            <Link to="/signup" className="header-button">Register</Link>
+            <Link to="/login" className="header-button" onClick={() => setIsNavOpen(false)}>Login</Link>
+            <Link to="/signup" className="header-button" onClick={() => setIsNavOpen(false)}>Register</Link>
           </>
         )}
         {user && (

@@ -5,7 +5,8 @@
 }
 
 .blog-entries-edit {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .blog-entry-edit {
@@ -66,4 +67,14 @@ ul {
   align-items: center;
   justify-content: center;
 
+}
+@media (max-width: 768px) {
+  .blog-entry-edit img {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-radius: 10px;
+  }
 }
