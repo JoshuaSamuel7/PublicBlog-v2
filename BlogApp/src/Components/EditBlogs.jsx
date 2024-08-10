@@ -50,17 +50,23 @@ const EditBlogs = ({ user }) => {
         if (editImage) {
             formData.append('image', editImage);
         }
-
+    
         try {
-            const response = await axios.put(`http://localhost:8000/api/posts/${id}`,{ withCredentials: true }, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            });
+            const response = await axios.put(
+                `https://publicblog-server-v2.vercel.app/api/posts/${id}`,
+                formData,
+                { 
+                    headers: { 'Content-Type': 'multipart/form-data' },
+                    withCredentials: true 
+                }
+            );
             setPosts(posts.map(post => (post._id === id ? response.data : post)));
             setEditMode(null);
         } catch (error) {
             console.error("There was an error updating the post!", error);
         }
     };
+    
 
     const handleCancel = () => {
         setEditMode(null);
