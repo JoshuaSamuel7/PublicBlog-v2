@@ -6,19 +6,21 @@
 
 .blog-entries-edit {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Arrange blog entries vertically */
+  align-items: center; /* Center the entries */
 }
 
 .blog-entry-edit {
-  margin: 20px 0; /* Center entries within the panel */
-  padding: 20px; /* Increased padding for better spacing */
+  margin: 20px 0; /* Maintain vertical spacing between entries */
+  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #fff;
-  color: #ffffff; /* Ensure text is readable */
+  color: #001b32; /* Corrected text color for readability */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-  width: 70vw; /* Ensure entries take the full width of the panel */
+  width: 70vw; /* Adjust width as needed */
 }
+
 
 .blogtitle {
   text-decoration: none;
