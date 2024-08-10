@@ -47,7 +47,7 @@ const IndividualBlog = ({ user }) => {
             />
           )}
           <p>{post.bcont}</p>
-          <p>{"-"+post.from}</p>
+          <p>{"-"+post.name}</p>
         </div>
       )}
     </div>
